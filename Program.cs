@@ -30,7 +30,7 @@ namespace Tic_Tac_Toe
                 string selection = Console.ReadLine();
 
                 //This while loop prevents users from breaking the code by inputting something other than 1-9
-                while (selection != "1" || selection != "2" || selection != "3" || selection != "4" || selection != "5" || selection != "6" || selection != "7" || selection != "8" || selection != "9")
+                while (selection != "1" && selection != "2" && selection != "3" && selection != "4" && selection != "5" && selection != "6" && selection != "7" && selection != "8" && selection != "9")
                 {
                     Console.Write("Please enter a valid square (1-9)");
                     selection = Console.ReadLine();
