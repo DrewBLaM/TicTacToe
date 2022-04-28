@@ -12,6 +12,9 @@ namespace Tic_Tac_Toe
         {
             //Create the player value
             string player = "x";
+
+            //grid lines
+            string gridLines = ("-+-+-");
             
             //Create a list which we will use to draw our grid
             List<string> grid = new List<string>(){"1","2","3","4","5","6","7","8","9"};
@@ -21,7 +24,7 @@ namespace Tic_Tac_Toe
             while (gameStatus)
             {
                 //Call the function to draw the game grid
-                drawGrid(grid);
+                drawGrid(grid, gridLines);
                 Console.WriteLine(" ");
                 Console.WriteLine(" ");
                 
@@ -54,7 +57,7 @@ namespace Tic_Tac_Toe
                     int winner = checkWinner(grid);
                     if (winner == 1)
                     {
-                        drawGrid(grid);
+                        drawGrid(grid, gridLines);
                         Console.WriteLine(" ");
                         Console.WriteLine($"{player} is the winner!");
                         gameStatus = false;
@@ -64,7 +67,7 @@ namespace Tic_Tac_Toe
                     int drawState = checkDraw(grid);
                     if (drawState == 1)
                     {
-                        drawGrid(grid);
+                        drawGrid(grid, gridLines);
                         Console.WriteLine(" ");
                         Console.WriteLine("Draw :(");
                         gameStatus = false;
@@ -89,12 +92,12 @@ namespace Tic_Tac_Toe
         }
 
         //This function draws the game grid
-        static void drawGrid(List<string> grid)
+        static void drawGrid(List<string> grid, string gridLines)
         {
             Console.WriteLine($"{grid[0]}|{grid[1]}|{grid[2]}");
-            Console.WriteLine("-+-+-");
+            Console.WriteLine(gridLines);
             Console.WriteLine($"{grid[3]}|{grid[4]}|{grid[5]}");
-            Console.WriteLine("-+-+-");
+            Console.WriteLine(gridLines);
             Console.WriteLine($"{grid[6]}|{grid[7]}|{grid[8]}");
         }
 
