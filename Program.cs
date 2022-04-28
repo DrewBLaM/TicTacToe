@@ -28,11 +28,21 @@ namespace Tic_Tac_Toe
                 //Collect player input
                 Console.Write($"{player}'s turn to choose a square (1-9) ");
                 string selection = Console.ReadLine();
+
+                //This while loop prevents users from breaking the code by inputting something other than 1-9
+                while (selection != "1" || selection != "2" || selection != "3" || selection != "4" || selection != "5" || selection != "6" || selection != "7" || selection != "8" || selection != "9")
+                {
+                    Console.Write("Please enter a valid square (1-9)");
+                    selection = Console.ReadLine();
+                }
+
+
                 Console.WriteLine(" ");
                 
                 //create a variable that stores the list index value of the selected square
                 int selectionIndex = int.Parse(selection) - 1;
-                
+            
+
                 //This section updates the game grid and checks for the win or draw status
                 if (selection == grid[selectionIndex])
                 {
